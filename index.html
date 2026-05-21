@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Celestial Atlas — A Historical Star Map</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="header-title-block">
+        <span class="header-ornament">✦</span>
+        <h1 class="site-title">Celestial Atlas</h1>
+        <span class="header-ornament">✦</span>
+      </div>
+      <p class="site-subtitle">A Precessional Star Map · 10,000 BCE to 2026 CE</p>
+    </div>
+  </header>
+
+  <!-- Main Layout -->
+  <main class="main-layout">
+
+    <!-- Left Panel: Controls -->
+    <aside class="control-panel">
+      <div class="panel-section">
+        <h2 class="panel-heading">Epoch Navigator</h2>
+        <p class="panel-description">Drag the slider or enter a year to travel through time and witness axial precession reshape the sky.</p>
+
+        <div class="year-display-block">
+          <span class="year-label">Current Epoch</span>
+          <div class="year-readout" id="yearReadout">2026 CE</div>
+        </div>
+
+        <div class="slider-wrapper">
+          <input
+            type="range"
+            id="timelineSlider"
+            class="timeline-slider"
+            min="-10000"
+            max="2026"
+            value="2026"
+            step="1"
+          />
+          <div class="slider-labels">
+            <span>10,000 BCE</span>
+            <span>Present</span>
+          </div>
+        </div>
+
+        <div class="manual-input-row">
+          <label for="yearInput" class="input-label">Jump to Year</label>
+          <div class="input-wrapper">
+            <input
+              type="number"
+              id="yearInput"
+              class="year-input"
+              min="-10000"
+              max="2026"
+              value="2026"
+              placeholder="e.g. -2500"
+            />
+            <button id="yearGoBtn" class="go-btn">Go</button>
+          </div>
+          <span class="input-hint">Use negative values for BCE (e.g. −4500)</span>
+        </div>
+
+        <div class="epoch-presets">
+          <p class="presets-label">Notable Epochs</p>
+          <div class="presets-grid">
+            <button class="preset-btn" data-year="2026">2026 CE<br/><small>Polaris era</small></button>
+            <button class="preset-btn" data-year="1000">1000 CE<br/><small>Medieval sky</small></button>
+            <button class="preset-btn" data-year="-2500">2500 BCE<br/><small>Thuban pole</small></button>
+            <button class="preset-btn" data-year="-4000">4000 BCE<br/><small>Early Egypt</small></button>
+            <button class="preset-btn" data-year="-6000">6000 BCE<br/><small>Neolithic</small></button>
+            <button class="preset-btn" data-year="-10000">10000 BCE<br/><small>Ice Age end</small></button>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel-section">
+        <h2 class="panel-heading">Pole Star Now</h2>
+        <div class="pole-info" id="poleInfo">
+          <div class="pole-star-name" id="poleStarName">Polaris</div>
+          <div class="pole-star-detail" id="poleStarDetail">α Ursae Minoris · ~0.7° from pole</div>
+        </div>
+      </div>
+
+      <div class="panel-section legend-section">
+        <h2 class="panel-heading">Legend</h2>
+        <div class="legend-items">
+          <div class="legend-item">
+            <span class="legend-dot legend-bright"></span>
+            <span>Named star — click to inspect</span>
+          </div>
+          <div class="legend-item">
+            <span class="legend-dot legend-dim"></span>
+            <span>Background star field</span>
+          </div>
+          <div class="legend-item">
+            <span class="legend-dot legend-pole"></span>
+            <span>Celestial North Pole</span>
+          </div>
+          <div class="legend-item">
+            <span class="legend-line"></span>
+            <span>Precession circle path</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel-section">
+        <h2 class="panel-heading">About Precession</h2>
+        <p class="panel-description small-text">
+          Earth's axis wobbles like a spinning top, completing one full cycle every ~25,772 years — the Platonic Year. This shifts which star sits nearest the celestial pole. Thuban (α Draconis) was the pole star around 2750 BCE; Polaris holds the title today; Vega will take the crown near 14,000 CE.
+        </p>
+      </div>
+    </aside>
+
+    <!-- Center: Star Map Canvas -->
+    <section class="map-section">
+      <div class="canvas-container" id="canvasContainer">
+        <canvas id="starCanvas"></canvas>
+        <div class="canvas-overlay-label top-left">NORTH CELESTIAL POLE</div>
+        <div class="canvas-overlay-label bottom-right" id="epochLabel">Epoch: 2026 CE</div>
+        <div class="crosshair" id="crosshair"></div>
+      </div>
+      <p class="map-hint">Click any named star to view its data card · The circle traces the precessional path of the pole</p>
+    </section>
+
+  </main>
+
+  <!-- Star Data Card Modal -->
+  <div class="modal-backdrop" id="modalBackdrop" aria-hidden="true">
+    <div class="star-card" id="starCard" role="dialog" aria-modal="true">
+      <button class="card-close-btn" id="cardCloseBtn" aria-label="Close">✕</button>
+
+      <div class="card-header">
+        <div class="card-star-glyph" id="cardGlyph">★</div>
+        <div class="card-title-block">
+          <h2 class="card-star-name" id="cardStarName">Sirius</h2>
+          <p class="card-constellation" id="cardConstellation">Canis Major</p>
+          <p class="card-bayer" id="cardBayer">α Canis Majoris</p>
+        </div>
+      </div>
+
+      <div class="card-divider"></div>
+
+      <div class="card-grid">
+        <div class="card-stat">
+          <span class="stat-label">Distance</span>
+          <span class="stat-value" id="cardDistance">—</span>
+          <span class="stat-unit">light-years</span>
+        </div>
+        <div class="card-stat">
+          <span class="stat-label">Mass</span>
+          <span class="stat-value" id="cardMass">—</span>
+          <span class="stat-unit">× Solar Mass</span>
+        </div>
+        <div class="card-stat">
+          <span class="stat-label">Radius</span>
+          <span class="stat-value" id="cardRadius">—</span>
+          <span class="stat-unit">× Solar Radius</span>
+        </div>
+        <div class="card-stat">
+          <span class="stat-label">Luminosity</span>
+          <span class="stat-value" id="cardLuminosity">—</span>
+          <span class="stat-unit">× Solar Luminosity</span>
+        </div>
+        <div class="card-stat">
+          <span class="stat-label">Spectral Type</span>
+          <span class="stat-value spec-value" id="cardSpectral">—</span>
+          <span class="stat-unit">Spectral class</span>
+        </div>
+        <div class="card-stat">
+          <span class="stat-label">Apparent Mag.</span>
+          <span class="stat-value" id="cardMagnitude">—</span>
+          <span class="stat-unit">Visual magnitude</span>
+        </div>
+      </div>
+
+      <div class="card-divider"></div>
+
+      <div class="card-lore">
+        <h3 class="lore-heading">Cultural History</h3>
+        <p class="lore-text" id="cardLore">—</p>
+      </div>
+
+      <div class="card-precession-note" id="cardPrecessionNote" style="display:none;">
+        <span class="precession-icon">◎</span>
+        <span id="cardPrecessionText"></span>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
