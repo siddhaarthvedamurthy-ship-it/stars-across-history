@@ -10,11 +10,11 @@
 
 'use strict';
 
-// ─────────────────────────────────────────────
+// ──────────────────────────────────────────────────────────
 //  1. STAR DATABASE
 //  All angular coordinates are J2000.0 epoch
 //  RA in decimal degrees, Dec in decimal degrees
-// ─────────────────────────────────────────────
+// ──────────────────────────────────────────────────────────
 const STARS = [
   {
     id: 'sirius',
@@ -270,159 +270,196 @@ const STARS = [
     color: '#b0d0ff',
     size: 4,
     lore: 'The fourth Royal Star of ancient Persian astronomy (Venant), Regulus was known as the \'King Star\' or \'Little King\'. Its name in Latin means \'little prince\'. Marked the summer solstice around 3000 BCE and was considered enormously powerful in astrology — said to bring glory and riches to those born under its influence. Regulus spins so rapidly that it completes a rotation in under 16 hours, causing its equatorial diameter to bulge measurably. In Babylonian astronomy it was Sharru, the king.'
+  },
+  {
+    id: 'kochab',
+    name: 'Kochab',
+    bayer: '\u03b2 Ursae Minoris',
+    constellation: 'Ursa Minor',
+    ra: 222.6764,
+    dec: 74.1555,
+    magnitude: 2.08,
+    mass: 2.2,
+    radius: 42,
+    luminosity: 390,
+    distance: 131,
+    spectral: 'K4III',
+    color: '#ffb27a',
+    size: 4,
+    lore: 'The bright orange giant at the lip of the Little Dipper\'s bowl, Kochab served as the pole star from roughly 1500 BCE to 500 CE — the era of the Egyptian New Kingdom, classical Greece and Rome. Ancient Greek mariners navigated by it alongside Polaris, which they called Phoenike. Its name derives from the Arabic al-kawkab, simply \'the star\'. Kochab is a red giant about 42 times the Sun\'s radius, and together with its neighbour Pherkad it forms the \'Guardians of the Pole\'.'
+  },
+  {
+    id: 'errai',
+    name: 'Errai',
+    bayer: '\u03b3 Cephei',
+    constellation: 'Cepheus',
+    ra: 354.8368,
+    dec: 77.6323,
+    magnitude: 3.21,
+    mass: 1.4,
+    radius: 4.9,
+    luminosity: 10.6,
+    distance: 45,
+    spectral: 'K1IV',
+    color: '#ffcf9e',
+    size: 3,
+    lore: 'Errai will be the closest bright star to the north celestial pole around 4000 CE, inheriting the title of pole star from Polaris. Its name comes from the Arabic al-irai, \'the shepherd\'. In 1988 it became one of the very first stars ever announced to host an exoplanet — a claim confirmed decades later — making Gamma Cephei Ab a landmark in the history of planet hunting. It is an evolving subgiant beginning its swelling toward old age.'
+  },
+  {
+    id: 'alderamin',
+    name: 'Alderamin',
+    bayer: '\u03b1 Cephei',
+    constellation: 'Cepheus',
+    ra: 319.645,
+    dec: 62.5855,
+    magnitude: 2.46,
+    mass: 1.9,
+    radius: 2.7,
+    luminosity: 17,
+    distance: 49,
+    spectral: 'A8V',
+    color: '#dfe8ff',
+    size: 3,
+    lore: 'The brightest star of Cepheus, Alderamin takes its turn as the north pole star around 7500 CE as the precessional cone sweeps on. Its Arabic name means \'the right forearm\'. It is a remarkably fast rotator — spinning at up to 245 km/s, over a hundred times faster than the Sun — which blurs its surface features and makes it one of the classic targets of stellar rotation studies. To Chinese astronomers it marked the right wall of the celestial imperial enclosure.'
+  },
+  {
+    id: 'iota-cephei',
+    name: 'Iota Cephei',
+    bayer: '\u03b9 Cephei',
+    constellation: 'Cepheus',
+    ra: 342.5783,
+    dec: 66.2,
+    magnitude: 3.52,
+    mass: 2.0,
+    radius: 11,
+    luminosity: 57,
+    distance: 115,
+    spectral: 'K0III',
+    color: '#ffd9a8',
+    size: 3,
+    lore: 'An orange giant that will pass within about 3 degrees of the north celestial pole around 5200 CE, briefly rivaling Errai for the role of pole star before Alderamin\'s era. Little noticed today in the fainter reaches of Cepheus, it is nonetheless a swollen giant over ten times the Sun\'s radius, burning helium in a shell around its core as it ages.'
+  },
+  {
+    id: 'polaris-australis',
+    name: 'Polaris Australis',
+    bayer: '\u03c3 Octantis',
+    constellation: 'Octans',
+    ra: 317.1913,
+    dec: -88.9572,
+    magnitude: 5.47,
+    mass: 1.5,
+    radius: 2.4,
+    luminosity: 9,
+    distance: 29.4,
+    spectral: 'F0III',
+    color: '#f2f0ff',
+    size: 3,
+    lore: 'The southern pole star — and a poor one. Sigma Octantis sits barely a degree from the south celestial pole, but at magnitude 5.5 it is nearly at the limit of naked-eye vision, a humiliating contrast to brilliant Polaris in the north. The IAU officially named it Polaris Australis in 2017. It is a Delta Scuti variable, pulsing gently, and for southern navigators the true guide is instead the bright Southern Cross, whose long axis points at the pole.'
+  },
+  {
+    id: 'beta-hydri',
+    name: 'Beta Hydri',
+    bayer: '\u03b2 Hydri',
+    constellation: 'Hydrus',
+    ra: 6.4371,
+    dec: -77.2541,
+    magnitude: 2.80,
+    mass: 1.1,
+    radius: 1.8,
+    luminosity: 3.5,
+    distance: 24.3,
+    spectral: 'G2IV',
+    color: '#fff3c9',
+    size: 3,
+    lore: 'The brightest star near the south celestial pole, and a near-twin of our own Sun just entering old age — a yellow subgiant only 24 light-years away. As precession carries the pole onward, Beta Hydri will be the closest reasonably bright star to the south celestial pole for millennia after Sigma Octantis drifts away, making it the future \'southern Polaris\'. It hosts a known debris disk and was an early target in the search for extrasolar planets.'
   }
+
 ];
 
-// ─────────────────────────────────────────────
-//  2. PRECESSION ENGINE
-//  Earth's rotational axis traces a cone with a
-//  period of ~25,772 years (one Platonic Year).
-//  The north celestial pole moves in a circle of
-//  radius ~23.44° centred on the ecliptic pole.
-// ─────────────────────────────────────────────
+// ──────────────────────────────────────────────────────────
+//  2. PRECESSION ENGINE (long-term model)
+//  The celestial poles sweep circles of radius = obliquity (ε)
+//  around the ecliptic poles.  We work in ecliptic coordinates,
+//  which are fixed under axial precession:
+//    · ecliptic longitude drifts by 360° / 25,772 yr
+//    · obliquity oscillates ±~1° over a 41,000-year cycle
+//  This stays accurate across the full ±50,000-year range,
+//  unlike short-term IAU polynomials.
+// ──────────────────────────────────────────────────────────
 const PRECESSION = {
-  PERIOD: 25772,           // years
-  OBLIQUITY: 23.4392911,  // degrees — axial tilt (approx constant for our purposes)
-  // Ecliptic pole in RA/Dec (J2000): RA=270°, Dec=+66.56°
-  ECLIPTIC_POLE_RA:  270.0,
-  ECLIPTIC_POLE_DEC:  66.5607,
-  // Reference epoch: J2000.0 = year 2000
-  REF_YEAR: 2000
+  PERIOD: 25772,            // years per precession cycle
+  REF_YEAR: 2000,           // J2000.0
+  OBLIQUITY_J2000: 23.4392911,
+  OBLIQUITY_AMP: 0.95,      // degrees, half-amplitude of the 41-kyr cycle
+  OBLIQUITY_PERIOD: 41000,  // years
+  OBLIQUITY_PEAK_YEAR: -8500,
+  EPOCH_MIN: -50000,
+  EPOCH_MAX: 50000,
+  VIEW_DEG: 115             // degrees of sky shown from pole to rim
 };
 
-/**
- * Convert degrees to radians.
- */
-function toRad(deg) { return deg * Math.PI / 180; }
+const RAD = Math.PI / 180;
 
-/**
- * Convert radians to degrees.
- */
+function toRad(deg) { return deg * RAD; }
 function toDeg(rad) { return rad * 180 / Math.PI; }
 
 /**
- * Convert equatorial coordinates (RA, Dec) to Cartesian unit vector.
+ * Mean obliquity of the ecliptic at a given year.
+ * Calibrated so that obliquityAt(2000) === OBLIQUITY_J2000 exactly.
  */
-function equatorialToCartesian(raDeg, decDeg) {
-  const ra  = toRad(raDeg);
-  const dec = toRad(decDeg);
-  return {
-    x: Math.cos(dec) * Math.cos(ra),
-    y: Math.cos(dec) * Math.sin(ra),
-    z: Math.sin(dec)
-  };
+function obliquityAt(year) {
+  const p = PRECESSION;
+  const phase = 2 * Math.PI * (year - p.OBLIQUITY_PEAK_YEAR) / p.OBLIQUITY_PERIOD;
+  const refPhase = 2 * Math.PI * (p.REF_YEAR - p.OBLIQUITY_PEAK_YEAR) / p.OBLIQUITY_PERIOD;
+  return p.OBLIQUITY_J2000 + p.OBLIQUITY_AMP * (Math.cos(phase) - Math.cos(refPhase));
 }
 
 /**
- * Convert Cartesian unit vector back to equatorial RA/Dec.
+ * Equatorial (RA, Dec) -> ecliptic (λ, β), given obliquity ε.
  */
-function cartesianToEquatorial(v) {
-  const dec = toDeg(Math.asin(Math.clamp ? Math.clamp(v.z, -1, 1) : Math.max(-1, Math.min(1, v.z))));
-  let ra = toDeg(Math.atan2(v.y, v.x));
+function equatorialToEcliptic(raDeg, decDeg, epsDeg) {
+  const ra = raDeg * RAD, dec = decDeg * RAD, eps = epsDeg * RAD;
+  const sinBeta = Math.sin(dec) * Math.cos(eps) - Math.cos(dec) * Math.sin(eps) * Math.sin(ra);
+  const cosBetaSinLam = Math.sin(dec) * Math.sin(eps) + Math.cos(dec) * Math.cos(eps) * Math.sin(ra);
+  const cosBetaCosLam = Math.cos(dec) * Math.cos(ra);
+  const beta = toDeg(Math.asin(Math.max(-1, Math.min(1, sinBeta))));
+  let lam = toDeg(Math.atan2(cosBetaSinLam, cosBetaCosLam));
+  if (lam < 0) lam += 360;
+  return { lam, beta };
+}
+
+/**
+ * Ecliptic (λ, β) -> equatorial (RA, Dec), given obliquity ε.
+ */
+function eclipticToEquatorial(lamDeg, betaDeg, epsDeg) {
+  const lam = lamDeg * RAD, beta = betaDeg * RAD, eps = epsDeg * RAD;
+  const sinBeta = Math.sin(beta), cosBeta = Math.cos(beta);
+  const sinLam = Math.sin(lam), cosLam = Math.cos(lam);
+  const sinDec = sinBeta * Math.cos(eps) + cosBeta * Math.sin(eps) * sinLam;
+  const dec = toDeg(Math.asin(Math.max(-1, Math.min(1, sinDec))));
+  let ra = toDeg(Math.atan2(cosBeta * sinLam * Math.cos(eps) - sinBeta * Math.sin(eps), cosBeta * cosLam));
   if (ra < 0) ra += 360;
   return { ra, dec };
 }
 
 /**
- * Rotate vector v around axis k by angle theta (Rodrigues' formula).
- * k must be a unit vector.
- */
-function rotateAroundAxis(v, k, thetaRad) {
-  const cosT = Math.cos(thetaRad);
-  const sinT = Math.sin(thetaRad);
-  const dot  = v.x * k.x + v.y * k.y + v.z * k.z;
-  // cross product k × v
-  const cx = k.y * v.z - k.z * v.y;
-  const cy = k.z * v.x - k.x * v.z;
-  const cz = k.x * v.y - k.y * v.x;
-  return {
-    x: v.x * cosT + cx * sinT + k.x * dot * (1 - cosT),
-    y: v.y * cosT + cy * sinT + k.y * dot * (1 - cosT),
-    z: v.z * cosT + cz * sinT + k.z * dot * (1 - cosT)
-  };
-}
-
-/**
- * Compute the precession angle for a given year relative to J2000.
- * Returns the angle in radians that the equatorial frame has rotated.
- */
-function precessionAngle(year) {
-  const deltaYears = year - PRECESSION.REF_YEAR;
-  // Full circle in PERIOD years — retrograde (westward), so negative direction
-  return -2 * Math.PI * deltaYears / PRECESSION.PERIOD;
-}
-
-/**
- * Apply axial precession to a star's J2000 RA/Dec to get its apparent
- * position for a given year.
- *
- * The precession rotates the entire celestial sphere around the ecliptic
- * pole by the precession angle.
+ * Apply axial precession (and the slow obliquity cycle) to a
+ * star's J2000 equatorial coordinates for a given year.
  */
 function applyPrecession(raDeg, decDeg, year) {
-  // 1. Convert star's J2000 coords to Cartesian
-  const starVec = equatorialToCartesian(raDeg, decDeg);
-
-  // 2. Get ecliptic pole unit vector (this is the rotation axis)
-  const eclVec = equatorialToCartesian(PRECESSION.ECLIPTIC_POLE_RA, PRECESSION.ECLIPTIC_POLE_DEC);
-
-  // 3. Compute precession angle for this year
-  const angle = precessionAngle(year);
-
-  // 4. Rotate the star vector around the ecliptic pole
-  const rotated = rotateAroundAxis(starVec, eclVec, angle);
-
-  // 5. Convert back to RA/Dec
-  return cartesianToEquatorial(rotated);
+  const e = equatorialToEcliptic(raDeg, decDeg, PRECESSION.OBLIQUITY_J2000);
+  const lam = e.lam + 360 * (year - PRECESSION.REF_YEAR) / PRECESSION.PERIOD;
+  return eclipticToEquatorial(lam, e.beta, obliquityAt(year));
 }
 
 /**
- * Get the current north celestial pole position for a given year.
- * In J2000 the NCP is at RA=0°, Dec=90°.
- * With precession, it moves around the ecliptic pole in a circle of
- * radius ~23.44°.
+ * Position of the ecliptic pole in the *date* equatorial frame.
+ * Its angular distance from the celestial pole is exactly ε(date).
  */
-function getPolePosition(year) {
-  return applyPrecession(0, 90, year);
+function getEclipticPolePosition(year) {
+  return eclipticToEquatorial(90, 90, obliquityAt(year));
 }
 
-/**
- * Determine the nearest bright named pole-star candidate for a given year,
- * and return a human-readable description.
- */
-function getPoleStarInfo(year) {
-  const pole = getPolePosition(year);
-
-  let nearest = null;
-  let nearestDist = Infinity;
-
-  STARS.forEach(star => {
-    const precessed = applyPrecession(star.ra, star.dec, year);
-    const dist = angularDistance(precessed.ra, precessed.dec, pole.ra, pole.dec);
-    if (dist < nearestDist) {
-      nearestDist = dist;
-      nearest = { star, dist };
-    }
-  });
-
-  if (nearest && nearest.dist < 12) {
-    const deg = nearest.dist.toFixed(1);
-    return {
-      name: nearest.star.name,
-      detail: `${nearest.star.bayer} · ~${deg}° from pole`
-    };
-  }
-
-  // If none of our named stars are close, describe by RA/Dec
-  return {
-    name: 'No bright pole star',
-    detail: `Pole at RA ${pole.ra.toFixed(0)}° / Dec ${pole.dec.toFixed(1)}°`
-  };
-}
-
-/**
- * Angular distance between two RA/Dec points (in degrees).
- */
 function angularDistance(ra1, dec1, ra2, dec2) {
   const r1 = toRad(ra1); const d1 = toRad(dec1);
   const r2 = toRad(ra2); const d2 = toRad(dec2);
@@ -432,54 +469,176 @@ function angularDistance(ra1, dec1, ra2, dec2) {
   return toDeg(Math.acos(Math.max(-1, Math.min(1, cosAngle))));
 }
 
-// ─────────────────────────────────────────────
-//  3. CANVAS STAR MAP RENDERER
-// ─────────────────────────────────────────────
+// ──────────────────────────────────────────────────────────
+//  3. UNIFIED STAR CATALOG
+//  Merges the rich named-star entries above with the full
+//  naked-eye catalog (stars-data.js) and precomputes, for every
+//  star, its fixed ecliptic coordinates and proper-motion drift.
+// ──────────────────────────────────────────────────────────
+const ALL_STARS = [];
 
-class StarMap {
-  constructor(canvasEl) {
+function buildCatalog(CATALOG, STAR_NAMES, CONSTELLATION_NAMES) {
+  CATALOG.forEach(rec => {
+    ALL_STARS.push({
+      ra: rec[0], dec: rec[1], magnitude: rec[2], bv: rec[3],
+      pmRA: rec[4], pmDE: rec[5], hr: rec[6], spectral: rec[7],
+      constAbbr: rec[8],
+      name: STAR_NAMES[rec[6]] || null,
+      constellation: CONSTELLATION_NAMES[rec[8]] || rec[8] || '',
+      lore: null, mass: null, radius: null, luminosity: null, distance: null
+    });
+  });
+
+  // Attach rich entries (lore, physics) to their catalog stars by position
+  STARS.forEach(rich => {
+    let best = null, bestD = 0.1;
+    ALL_STARS.forEach(s => {
+      const d = angularDistance(s.ra, s.dec, rich.ra, rich.dec);
+      if (d < bestD) { bestD = d; best = s; }
+    });
+    if (best) {
+      best.name = best.name || rich.name;
+      best.lore = rich.lore;
+      best.mass = rich.mass;
+      best.radius = rich.radius;
+      best.luminosity = rich.luminosity;
+      best.distance = rich.distance;
+      best.bayer = rich.bayer;
+      best.spectral = best.spectral || rich.spectral;
+    }
+  });
+
+  // Precompute ecliptic coordinates (fixed under precession)
+  ALL_STARS.forEach(s => {
+    const e = equatorialToEcliptic(s.ra, s.dec, PRECESSION.OBLIQUITY_J2000);
+    s.eclLon = e.lam;
+    s.eclLat = e.beta;
+    const bR = e.beta * RAD;
+    s.sinBeta = Math.sin(bR);
+    s.cosBeta = Math.cos(bR);
+    // Proper motion, expressed as a slow drift in the ecliptic frame
+    if (s.pmRA || s.pmDE) {
+      const cosD = Math.max(0.05, Math.cos(s.dec * RAD));
+      const ra2 = s.ra + (s.pmRA / 3600) / cosD;
+      const dec2 = s.dec + s.pmDE / 3600;
+      const e2 = equatorialToEcliptic(ra2, dec2, PRECESSION.OBLIQUITY_J2000);
+      let dl = e2.lam - e.lam;
+      if (dl > 180) dl -= 360;
+      if (dl < -180) dl += 360;
+      s.pmLam = dl;
+      s.pmBeta = e2.beta - e.beta;
+    } else {
+      s.pmLam = 0;
+      s.pmBeta = 0;
+    }
+  });
+}
+
+/**
+ * Compute date-frame equatorial positions of every catalog star
+ * for a given year.  Cached per year; shared by both hemispheres.
+ */
+let skyCache = { year: NaN, positions: null, obliquity: 0 };
+
+function computeSky(year) {
+  if (skyCache.year === year) return skyCache;
+  const dt = year - PRECESSION.REF_YEAR;
+  const lamShift = 360 * dt / PRECESSION.PERIOD;
+  const eps = obliquityAt(year);
+  const epsR = eps * RAD;
+  const sinE = Math.sin(epsR), cosE = Math.cos(epsR);
+  const positions = new Array(ALL_STARS.length);
+  for (let i = 0; i < ALL_STARS.length; i++) {
+    const s = ALL_STARS[i];
+    const lam = (s.eclLon + lamShift + s.pmLam * dt) * RAD;
+    const beta = s.eclLat + s.pmBeta * dt;
+    const sinL = Math.sin(lam), cosL = Math.cos(lam);
+    const sinDec = s.sinBeta * cosE + s.cosBeta * sinE * sinL;
+    const dec = toDeg(Math.asin(Math.max(-1, Math.min(1, sinDec))));
+    let ra = toDeg(Math.atan2(s.cosBeta * sinL * cosE - s.sinBeta * sinE, s.cosBeta * cosL));
+    if (ra < 0) ra += 360;
+    positions[i] = { ra, dec };
+  }
+  skyCache = { year, positions, obliquity: eps };
+  return skyCache;
+}
+
+function displayName(s) {
+  return s.name || (s.hr ? 'HR ' + s.hr : 'Unnamed star');
+}
+
+/**
+ * Nearest naked-eye star to the celestial pole for a hemisphere.
+ */
+function getPoleStarInfo(year, hemisphere) {
+  const { positions } = computeSky(year);
+  let best = 0;
+  let bestDec = hemisphere === 'north' ? -Infinity : Infinity;
+  for (let i = 0; i < positions.length; i++) {
+    const d = positions[i].dec;
+    if (hemisphere === 'north' ? d > bestDec : d < bestDec) { bestDec = d; best = i; }
+  }
+  const s = ALL_STARS[best];
+  const dist = hemisphere === 'north' ? 90 - bestDec : bestDec + 90;
+  let detail = `${s.constellation || '—'} · mag ${s.magnitude.toFixed(2)} · ${dist.toFixed(1)}° from pole`;
+  if (!s.name) {
+    let named = null, namedD = 8;
+    for (let i = 0; i < positions.length; i++) {
+      if (!ALL_STARS[i].name) continue;
+      const d = angularDistance(positions[i].ra, positions[i].dec, positions[best].ra, positions[best].dec);
+      if (d < namedD) { namedD = d; named = ALL_STARS[i]; }
+    }
+    if (named) detail += ` · ${displayName(named)} ${namedD.toFixed(1)}° away`;
+  }
+  return {
+    star: s,
+    dist,
+    name: displayName(s),
+    detail
+  };
+}
+
+// ──────────────────────────────────────────────────────────
+//  4. DUAL-HEMISPHERE STAR MAP RENDERER
+// ──────────────────────────────────────────────────────────
+
+// Black-body-ish color from B−V color index (Ballesteros approximation)
+function bvToColor(bv) {
+  const t = 4600 * (1 / (0.92 * bv + 1.7) + 1 / (0.92 * bv + 0.62));
+  let r, g, b;
+  if (t <= 66) {
+    r = 255;
+    g = 99.47 * Math.log(t) - 161.12;
+  } else {
+    r = 329.7 * Math.pow(t - 60, -0.1332);
+    g = 288.12 * Math.pow(t - 60, -0.0755);
+  }
+  if (t >= 66) b = 255;
+  else if (t <= 19) b = 0;
+  else b = 138.52 * Math.log(t - 10) - 305.04;
+  const cl = v => Math.max(0, Math.min(255, Math.round(v)));
+  return `rgb(${cl(r)},${cl(g)},${cl(b)})`;
+}
+
+class HemisphereMap {
+  constructor(canvasEl, hemisphere) {
     this.canvas = canvasEl;
     this.ctx    = canvasEl.getContext('2d');
+    this.hemisphere = hemisphere; // 'north' | 'south'
     this.year   = 2026;
-    this.bgStars = [];
-    this.hoveredStar = null;
+    this.hoveredIndex = -1;
     this.onStarClick = null;
+    this.screenPositions = [];
 
-    this._generateBgStars();
     this._bindEvents();
     this.resize();
-  }
-
-  // Generate a stable field of faint background stars
-  _generateBgStars() {
-    // Use a seeded pseudo-random for reproducibility
-    const N = 380;
-    let seed = 42;
-    const rand = () => {
-      seed = (seed * 1664525 + 1013904223) & 0xFFFFFFFF;
-      return (seed >>> 0) / 0xFFFFFFFF;
-    };
-
-    this.bgStars = [];
-    for (let i = 0; i < N; i++) {
-      this.bgStars.push({
-        // Normalised position [0,1]
-        nx: rand(),
-        ny: rand(),
-        r:  0.4 + rand() * 1.1,
-        a:  0.05 + rand() * 0.45,
-        // Slight blue-white tint variety
-        hue: rand() < 0.7 ? 210 : (rand() < 0.5 ? 40 : 0),
-        sat: rand() < 0.7 ? 40 : 0
-      });
-    }
   }
 
   _bindEvents() {
     this.canvas.addEventListener('mousemove', this._onMouseMove.bind(this));
     this.canvas.addEventListener('click',     this._onClick.bind(this));
     this.canvas.addEventListener('mouseleave', () => {
-      this.hoveredStar = null;
+      this.hoveredIndex = -1;
       this.canvas.style.cursor = 'crosshair';
       this._scheduleRedraw();
     });
@@ -489,10 +648,10 @@ class StarMap {
   resize() {
     const container = this.canvas.parentElement;
     const size = Math.min(
-      container.offsetWidth  - 2,
-      window.innerHeight * 0.82
+      container.offsetWidth - 2,
+      window.innerHeight * 0.62
     );
-    const sz = Math.max(360, Math.floor(size));
+    const sz = Math.max(300, Math.floor(size));
     this.canvas.width  = sz;
     this.canvas.height = sz;
     this.size = sz;
@@ -509,50 +668,31 @@ class StarMap {
     this._raf = requestAnimationFrame(() => this.draw());
   }
 
-  // ── Projection ───────────────────────────────
-  // We use an orthographic-like polar projection centred on the
-  // current celestial north pole, scaled so Dec = 0° appears
-  // at the canvas edge.  Only the northern hemisphere is shown
-  // (Dec > −30°) to keep the view coherent.
-
+  // Polar azimuthal-equidistant projection centred on the
+  // celestial pole of this hemisphere. RA runs counter-
+  // clockwise in the north view, clockwise in the south view
+  // (both as seen from beyond the pole, like real planispheres).
   _project(raDeg, decDeg) {
-    const pole = getPolePosition(this.year);
-    const dist  = angularDistance(raDeg, decDeg, pole.ra, pole.dec);
-    // Angular distance from pole → radial distance on canvas
-    const maxDeg = 115; // degrees of sky shown from pole to edge
-    const r = (dist / maxDeg) * (this.size * 0.5 - 8);
-
-    // Compute position angle (bearing from pole to star)
-    const poleRad  = { ra: toRad(pole.ra),  dec: toRad(pole.dec) };
-    const starRad  = { ra: toRad(raDeg),     dec: toRad(decDeg) };
-
-    const dRA  = starRad.ra - poleRad.ra;
-    const y_   = Math.sin(dRA) * Math.cos(starRad.dec);
-    const x_   = Math.cos(poleRad.dec) * Math.sin(starRad.dec)
-                 - Math.sin(poleRad.dec) * Math.cos(starRad.dec) * Math.cos(dRA);
-    const pa   = Math.atan2(y_, x_);   // position angle
-
-    const cx = this.size * 0.5;
-    const cy = this.size * 0.5;
-
-    return {
-      x: cx + r * Math.sin(pa),
-      y: cy - r * Math.cos(pa),
-      dist,
-      r
-    };
+    const poleDist = this.hemisphere === 'north' ? 90 - decDeg : 90 + decDeg;
+    const maxDeg = PRECESSION.VIEW_DEG;
+    const r = (poleDist / maxDeg) * (this.size * 0.5 - 8);
+    const a = raDeg * RAD;
+    const s = Math.sin(a), c = Math.cos(a);
+    const cx = this.size * 0.5, cy = this.size * 0.5;
+    if (this.hemisphere === 'north') {
+      return { x: cx - r * s, y: cy - r * c, poleDist };
+    }
+    return { x: cx + r * s, y: cy - r * c, poleDist };
   }
 
-  // ── Main Draw ────────────────────────────────
   draw() {
-    const ctx  = this.ctx;
-    const sz   = this.size;
-    const cx   = sz * 0.5;
-    const cy   = sz * 0.5;
+    const ctx = this.ctx;
+    const sz  = this.size;
+    const cx  = sz * 0.5;
+    const cy  = sz * 0.5;
 
     ctx.clearRect(0, 0, sz, sz);
 
-    // --- Background gradient (deep space) ---
     const bgGrad = ctx.createRadialGradient(cx, cy, 0, cx, cy, sz * 0.5);
     bgGrad.addColorStop(0,   '#0c1128');
     bgGrad.addColorStop(0.6, '#060810');
@@ -562,111 +702,150 @@ class StarMap {
     ctx.arc(cx, cy, sz * 0.5 - 1, 0, Math.PI * 2);
     ctx.fill();
 
-    // Clip to circle
     ctx.save();
     ctx.beginPath();
     ctx.arc(cx, cy, sz * 0.5 - 1, 0, Math.PI * 2);
     ctx.clip();
 
-    // --- Faint circular grid lines ---
-    ctx.strokeStyle = 'rgba(180, 150, 70, 0.07)';
-    ctx.lineWidth = 1;
-    [30, 60, 90].forEach(deg => {
-      const maxDeg = 115;
-      const r = (deg / maxDeg) * (sz * 0.5 - 8);
-      ctx.beginPath();
-      ctx.arc(cx, cy, r, 0, Math.PI * 2);
-      ctx.stroke();
-    });
-
-    // --- Background stars ---
-    this.bgStars.forEach(s => {
-      const px = s.nx * sz;
-      const py = s.ny * sz;
-      const grd = ctx.createRadialGradient(px, py, 0, px, py, s.r * 2);
-      grd.addColorStop(0,   `hsla(${s.hue}, ${s.sat}%, 100%, ${s.a})`);
-      grd.addColorStop(1,   `hsla(${s.hue}, ${s.sat}%, 100%, 0)`);
-      ctx.fillStyle = grd;
-      ctx.beginPath();
-      ctx.arc(px, py, s.r * 2, 0, Math.PI * 2);
-      ctx.fill();
-    });
-
-    // --- Precession circle (path of celestial pole over one full cycle) ---
-    this._drawPrecessionCircle(ctx, cx, cy, sz);
-
-    // --- Celestial pole marker ---
-    this._drawPoleMarker(ctx, cx, cy);
-
-    // --- Named stars ---
-    this._namedStarPositions = [];
-    STARS.forEach(star => {
-      const precessed = applyPrecession(star.ra, star.dec, this.year);
-      const proj      = this._project(precessed.ra, precessed.dec);
-      const isHovered = this.hoveredStar && this.hoveredStar.id === star.id;
-      this._drawNamedStar(ctx, star, proj, isHovered);
-      this._namedStarPositions.push({ star, proj, precessed });
-    });
+    this._drawGrid(ctx, cx, cy);
+    this._drawPrecessionPath(ctx, cx, cy);
+    this._drawEclipticPole(ctx, cx, cy);
+    this._drawStars(ctx);
 
     ctx.restore();
 
-    // --- Circle border ---
     ctx.strokeStyle = 'rgba(160, 140, 80, 0.25)';
     ctx.lineWidth = 1.5;
     ctx.beginPath();
     ctx.arc(cx, cy, sz * 0.5 - 1, 0, Math.PI * 2);
     ctx.stroke();
+
+    this._drawPoleMarker(ctx, cx, cy);
   }
 
-  _drawPrecessionCircle(ctx, cx, cy, sz) {
-    // Draw the small circle traced by the north celestial pole
-    // over one full precessional cycle.
-    // The pole sweeps a cone of radius ≈ 23.44° around the ecliptic pole.
+  _drawGrid(ctx, cx, cy) {
+    const R = this.size * 0.5 - 8;
+    const maxDeg = PRECESSION.VIEW_DEG;
+    ctx.strokeStyle = 'rgba(180, 150, 70, 0.09)';
+    ctx.lineWidth = 1;
+    ctx.font = "10px 'Cinzel', serif";
+    ctx.fillStyle = 'rgba(180, 150, 70, 0.4)';
+    [[30, '60°'], [60, '30°'], [90, 'EQUATOR']].forEach(([d, label]) => {
+      const r = (d / maxDeg) * R;
+      ctx.beginPath();
+      ctx.arc(cx, cy, r, 0, Math.PI * 2);
+      ctx.stroke();
+      ctx.fillText(label, cx + r * 0.7071 + 3, cy - r * 0.7071 - 3);
+    });
+  }
 
-    const steps = 360;
-    const points = [];
-    for (let i = 0; i <= steps; i++) {
-      const year = PRECESSION.REF_YEAR + (i / steps) * PRECESSION.PERIOD;
-      const polePos = getPolePosition(year);
-      // Project the pole against the *current* view pole (which is today's pole for the reference frame)
-      const viewPole  = getPolePosition(this.year);
-      const dist      = angularDistance(polePos.ra, polePos.dec, viewPole.ra, viewPole.dec);
-      const maxDeg    = 115;
-      const r         = (dist / maxDeg) * (sz * 0.5 - 8);
-
-      const dRA = toRad(polePos.ra - viewPole.ra);
-      const y_  = Math.sin(dRA) * Math.cos(toRad(polePos.dec));
-      const x_  = Math.cos(toRad(viewPole.dec)) * Math.sin(toRad(polePos.dec))
-                  - Math.sin(toRad(viewPole.dec)) * Math.cos(toRad(polePos.dec)) * Math.cos(dRA);
-      const pa  = Math.atan2(y_, x_);
-      points.push({
-        x: cx + r * Math.sin(pa),
-        y: cy - r * Math.cos(pa)
-      });
-    }
-
-    // Dashed gold circle
+  _drawPrecessionPath(ctx, cx, cy) {
+    // Path of the celestial pole over one full precession cycle,
+    // sampled through the obliquity oscillation (an annulus band).
+    const steps = 480;
+    const startYear = this.year - PRECESSION.PERIOD / 2;
     ctx.save();
     ctx.setLineDash([4, 8]);
-    ctx.strokeStyle = 'rgba(180, 140, 50, 0.28)';
-    ctx.lineWidth   = 1;
+    ctx.strokeStyle = 'rgba(180, 140, 50, 0.3)';
+    ctx.lineWidth = 1;
     ctx.beginPath();
-    points.forEach((p, i) => i === 0 ? ctx.moveTo(p.x, p.y) : ctx.lineTo(p.x, p.y));
+    for (let i = 0; i <= steps; i++) {
+      const yr = startYear + (i / steps) * PRECESSION.PERIOD;
+      const ep = getEclipticPolePosition(yr);
+      const p = this._project(ep.ra, ep.dec);
+      if (i === 0) ctx.moveTo(p.x, p.y); else ctx.lineTo(p.x, p.y);
+    }
     ctx.stroke();
     ctx.restore();
   }
 
+  _drawEclipticPole(ctx, cx, cy) {
+    const ep = getEclipticPolePosition(this.year);
+    const p = this._project(ep.ra, ep.dec);
+    ctx.strokeStyle = 'rgba(212, 170, 80, 0.55)';
+    ctx.lineWidth = 1.2;
+    const len = 6;
+    ctx.beginPath();
+    ctx.moveTo(p.x - len, p.y - len); ctx.lineTo(p.x + len, p.y + len);
+    ctx.moveTo(p.x - len, p.y + len); ctx.lineTo(p.x + len, p.y - len);
+    ctx.stroke();
+    ctx.fillStyle = 'rgba(212, 170, 80, 0.55)';
+    ctx.font = "10px 'Cinzel', serif";
+    ctx.fillText('ECLIPTIC POLE', p.x + 9, p.y + 3);
+  }
+
+  _drawStars(ctx) {
+    const { positions } = computeSky(this.year);
+    const maxDeg = PRECESSION.VIEW_DEG;
+    const sz = this.size;
+    this.screenPositions = [];
+
+    const poleStar = getPoleStarInfo(this.year, this.hemisphere);
+
+    // Dim first, bright last
+    const order = [];
+    for (let i = 0; i < ALL_STARS.length; i++) {
+      const p = this._project(positions[i].ra, positions[i].dec);
+      if (p.poleDist > maxDeg) continue;
+      if (p.x < 2 || p.x > sz - 2 || p.y < 2 || p.y > sz - 2) continue;
+      order.push({ i, p });
+    }
+    order.sort((a, b) => ALL_STARS[b.i].magnitude - ALL_STARS[a.i].magnitude);
+
+    order.forEach(({ i, p }) => {
+      const s = ALL_STARS[i];
+      const isHovered = i === this.hoveredIndex;
+      const isPole = poleStar.star === s;
+      const r = Math.max(0.7, 3.3 - 0.5 * s.magnitude);
+
+      if (s.magnitude < 1.5 || isHovered || isPole) {
+        const glowR = r * (isHovered || isPole ? 5 : 3.5);
+        const glow = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, glowR);
+        glow.addColorStop(0, 'rgba(220,230,255,0.9)');
+        glow.addColorStop(1, 'rgba(220,230,255,0)');
+        ctx.fillStyle = glow;
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, glowR, 0, Math.PI * 2);
+        ctx.fill();
+      }
+
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, isHovered ? r + 1 : r, 0, Math.PI * 2);
+      ctx.fillStyle = s.fillColor || (s.fillColor = bvToColor(s.bv));
+      ctx.fill();
+
+      if (isPole) {
+        ctx.strokeStyle = 'rgba(96, 200, 255, 0.9)';
+        ctx.lineWidth = 1.5;
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, r + 6, 0, Math.PI * 2);
+        ctx.stroke();
+      }
+
+      const showLabel = isHovered || isPole || (s.name && s.magnitude <= 1.6);
+      if (showLabel) {
+        ctx.globalAlpha = isHovered || isPole ? 1 : 0.7;
+        ctx.fillStyle = isPole ? '#8fd4ff' : 'rgba(230,225,210,0.95)';
+        ctx.font = `${isHovered || isPole ? 600 : 400} ${isHovered || isPole ? 12 : 11}px 'Cinzel', serif`;
+        ctx.shadowColor = 'rgba(0,0,0,0.8)';
+        ctx.shadowBlur = 4;
+        const label = isPole ? `${displayName(s)} — POLE STAR` : displayName(s);
+        ctx.fillText(label, p.x + r + 5, p.y + 4);
+        ctx.shadowBlur = 0;
+        ctx.globalAlpha = 1;
+      }
+
+      this.screenPositions.push({ x: p.x, y: p.y, i });
+    });
+  }
+
   _drawPoleMarker(ctx, cx, cy) {
-    // The current pole is always at the canvas center
-    const r = 5;
-    // Outer ring
+    const r = 4;
     ctx.strokeStyle = 'rgba(96, 200, 255, 0.7)';
     ctx.lineWidth = 1.5;
     ctx.beginPath();
     ctx.arc(cx, cy, r + 4, 0, Math.PI * 2);
     ctx.stroke();
-
-    // Inner dot
     const grd = ctx.createRadialGradient(cx, cy, 0, cx, cy, r);
     grd.addColorStop(0, 'rgba(140, 220, 255, 1)');
     grd.addColorStop(1, 'rgba(60, 180, 255, 0)');
@@ -674,169 +853,108 @@ class StarMap {
     ctx.beginPath();
     ctx.arc(cx, cy, r, 0, Math.PI * 2);
     ctx.fill();
-
-    // Cross-hair lines
-    ctx.strokeStyle = 'rgba(96, 200, 255, 0.4)';
-    ctx.lineWidth = 0.75;
-    const len = 12;
-    ctx.beginPath();
-    ctx.moveTo(cx - len, cy); ctx.lineTo(cx + len, cy);
-    ctx.moveTo(cx, cy - len); ctx.lineTo(cx, cy + len);
-    ctx.stroke();
   }
 
-  _drawNamedStar(ctx, star, proj, isHovered) {
-    const { x, y } = proj;
-
-    // Skip if very close to edge
-    if (x < 4 || x > this.size - 4 || y < 4 || y > this.size - 4) return;
-
-    const baseSize = star.size || 3;
-    const size     = isHovered ? baseSize + 2 : baseSize;
-
-    // Outer glow
-    const glowR = isHovered ? size * 5 : size * 3.5;
-    const glow  = ctx.createRadialGradient(x, y, 0, x, y, glowR);
-    glow.addColorStop(0, star.color + 'cc');
-    glow.addColorStop(1, star.color + '00');
-    ctx.fillStyle = glow;
-    ctx.beginPath();
-    ctx.arc(x, y, glowR, 0, Math.PI * 2);
-    ctx.fill();
-
-    // Star core
-    const starGrd = ctx.createRadialGradient(x, y, 0, x, y, size);
-    starGrd.addColorStop(0, '#ffffff');
-    starGrd.addColorStop(0.4, star.color);
-    starGrd.addColorStop(1, star.color + '88');
-    ctx.fillStyle = starGrd;
-    ctx.beginPath();
-    ctx.arc(x, y, size, 0, Math.PI * 2);
-    ctx.fill();
-
-    // Hover ring
-    if (isHovered) {
-      ctx.strokeStyle = star.color;
-      ctx.lineWidth   = 1;
-      ctx.globalAlpha = 0.6;
-      ctx.beginPath();
-      ctx.arc(x, y, size + 5, 0, Math.PI * 2);
-      ctx.stroke();
-      ctx.globalAlpha = 1;
-    }
-
-    // Label
-    const labelOpacity = isHovered ? 1.0 : 0.65;
-    ctx.globalAlpha = labelOpacity;
-    ctx.fillStyle   = star.color;
-    ctx.font        = `${isHovered ? 600 : 400} ${isHovered ? 12 : 11}px 'Cinzel', serif`;
-    ctx.shadowColor = 'rgba(0,0,0,0.8)';
-    ctx.shadowBlur  = 4;
-    ctx.fillText(star.name, x + size + 5, y + 4);
-    ctx.shadowBlur  = 0;
-    ctx.globalAlpha = 1;
-  }
-
-  // ── Mouse Interaction ────────────────────────
   _getCanvasPos(e) {
     const rect = this.canvas.getBoundingClientRect();
-    return {
-      x: e.clientX - rect.left,
-      y: e.clientY - rect.top
-    };
+    return { x: e.clientX - rect.left, y: e.clientY - rect.top };
   }
 
-  _findHoveredStar(mx, my) {
-    if (!this._namedStarPositions) return null;
-    const hitRadius = 18;
-    let found = null;
-    let minDist = Infinity;
-    this._namedStarPositions.forEach(({ star, proj }) => {
-      const dx   = proj.x - mx;
-      const dy   = proj.y - my;
-      const dist = Math.sqrt(dx * dx + dy * dy);
-      if (dist < hitRadius && dist < minDist) {
-        minDist = dist;
-        found   = star;
-      }
+  _findHovered(mx, my) {
+    let found = -1, minDist = 14;
+    this.screenPositions.forEach(({ x, y, i }) => {
+      const d = Math.sqrt((x - mx) ** 2 + (y - my) ** 2);
+      if (d < minDist) { minDist = d; found = i; }
     });
     return found;
   }
 
   _onMouseMove(e) {
     const { x, y } = this._getCanvasPos(e);
-    const star = this._findHoveredStar(x, y);
-    if (star !== this.hoveredStar) {
-      this.hoveredStar = star;
-      this.canvas.style.cursor = star ? 'pointer' : 'crosshair';
+    const idx = this._findHovered(x, y);
+    if (idx !== this.hoveredIndex) {
+      this.hoveredIndex = idx;
+      this.canvas.style.cursor = idx >= 0 ? 'pointer' : 'crosshair';
       this._scheduleRedraw();
     }
   }
 
   _onClick(e) {
     const { x, y } = this._getCanvasPos(e);
-    const star = this._findHoveredStar(x, y);
-    if (star && this.onStarClick) {
-      this.onStarClick(star);
+    const idx = this._findHovered(x, y);
+    if (idx >= 0 && this.onStarClick) {
+      this.onStarClick(ALL_STARS[idx]);
     }
   }
 }
 
-// ─────────────────────────────────────────────
-//  4. YEAR FORMATTING HELPERS
-// ─────────────────────────────────────────────
+// ──────────────────────────────────────────────────────────
+//  5. YEAR FORMATTING HELPERS
+// ──────────────────────────────────────────────────────────
 
 function formatYear(year) {
   const y = Math.round(year);
-  if (y >= 0) return `${y} CE`;
-  return `${Math.abs(y)} BCE`;
+  if (y > 0) return `${y.toLocaleString('en-US')} CE`;
+  if (y === 0) return '1 BCE';
+  return `${(-y).toLocaleString('en-US')} BCE`;
 }
 
 function clampYear(y) {
-  return Math.max(-10000, Math.min(2026, Math.round(y)));
+  return Math.max(PRECESSION.EPOCH_MIN, Math.min(PRECESSION.EPOCH_MAX, Math.round(y)));
 }
 
-// ─────────────────────────────────────────────
-//  5. STAR CARD UI
-// ─────────────────────────────────────────────
+// ──────────────────────────────────────────────────────────
+//  6. STAR CARD UI
+// ──────────────────────────────────────────────────────────
 
 function openStarCard(star, year) {
-  document.getElementById('cardStarName').textContent     = star.name;
-  document.getElementById('cardConstellation').textContent = star.constellation;
-  document.getElementById('cardBayer').textContent         = star.bayer;
-  document.getElementById('cardDistance').textContent      = star.distance.toLocaleString();
-  document.getElementById('cardMass').textContent          = star.mass.toFixed(2);
-  document.getElementById('cardRadius').textContent        = star.radius >= 10
-    ? star.radius.toLocaleString()
-    : star.radius.toFixed(2);
-  document.getElementById('cardLuminosity').textContent    = star.luminosity >= 1000
-    ? star.luminosity.toLocaleString()
-    : star.luminosity.toFixed(1);
-  document.getElementById('cardSpectral').textContent      = star.spectral;
-  document.getElementById('cardMagnitude').textContent     = star.magnitude.toFixed(2);
-  document.getElementById('cardLore').textContent          = star.lore;
+  const set = (id, v) => { document.getElementById(id).textContent = v; };
+  set('cardStarName', displayName(star));
+  set('cardConstellation', star.constellation || '—');
+  set('cardBayer', star.bayer || (star.hr ? `HR ${star.hr}` : '—'));
+  set('cardDistance', star.distance != null ? star.distance.toLocaleString() : '—');
+  set('cardMass', star.mass != null ? star.mass.toFixed(2) : '—');
+  set('cardRadius', star.radius != null
+    ? (star.radius >= 10 ? star.radius.toLocaleString() : star.radius.toFixed(2))
+    : '—');
+  set('cardLuminosity', star.luminosity != null
+    ? (star.luminosity >= 1000 ? star.luminosity.toLocaleString() : star.luminosity.toFixed(1))
+    : '—');
+  set('cardSpectral', star.spectral || '—');
+  set('cardMagnitude', star.magnitude != null ? star.magnitude.toFixed(2) : '—');
+  set('cardLore', star.lore ||
+    (star.name
+      ? 'An IAU-named star of the naked-eye sky. Its cultural stories vary across civilizations — and its position on these maps shifts with the slow wobble of Earth\'s axis.'
+      : 'A naked-eye star from the Yale Bright Star Catalog. Every star you can see from a dark site on Earth is plotted on these hemispheres.'));
 
-  // Glyph color matches star color
   const glyph = document.getElementById('cardGlyph');
-  glyph.style.color = star.color;
-  glyph.style.textShadow = `0 0 20px ${star.color}99, 0 0 40px ${star.color}44`;
+  const color = star.fillColor || bvToColor(star.bv || 0.6);
+  glyph.style.color = color;
+  glyph.style.textShadow = `0 0 20px ${color}99, 0 0 40px ${color}44`;
 
-  // Precession note — is this star near the pole for this year?
-  const pole    = getPolePosition(year);
-  const precPos = applyPrecession(star.ra, star.dec, year);
-  const dist    = angularDistance(precPos.ra, precPos.dec, pole.ra, pole.dec);
+  const { positions } = computeSky(year);
+  const idx = ALL_STARS.indexOf(star);
   const noteEl  = document.getElementById('cardPrecessionNote');
   const noteText = document.getElementById('cardPrecessionText');
 
-  if (dist < 8) {
-    let msg;
-    if (dist < 2) {
-      msg = `${star.name} is the current pole star for ${formatYear(year)}, sitting only ${dist.toFixed(1)}° from the celestial north pole.`;
+  if (idx >= 0) {
+    const dec = positions[idx].dec;
+    const distN = Math.abs(90 - dec);
+    const distS = Math.abs(90 + dec);
+    if (distN < 8 || distS < 8) {
+      const hemi = distN < distS ? 'north' : 'south';
+      const dist = Math.min(distN, distS);
+      let msg;
+      if (dist < 2) {
+        msg = `${displayName(star)} is the current pole star for ${formatYear(year)}, sitting only ${dist.toFixed(1)}° from the celestial ${hemi} pole.`;
+      } else {
+        msg = `${displayName(star)} is close to the celestial ${hemi} pole for ${formatYear(year)} — just ${dist.toFixed(1)}° away.`;
+      }
+      noteText.textContent = msg;
+      noteEl.style.display = 'flex';
     } else {
-      msg = `${star.name} is close to the celestial north pole for ${formatYear(year)} — just ${dist.toFixed(1)}° away.`;
+      noteEl.style.display = 'none';
     }
-    noteText.textContent = msg;
-    noteEl.style.display = 'flex';
   } else {
     noteEl.style.display = 'none';
   }
@@ -854,54 +972,120 @@ function closeStarCard() {
   document.body.style.overflow = '';
 }
 
-// ─────────────────────────────────────────────
-//  6. APP INITIALISATION
-// ─────────────────────────────────────────────
+// ──────────────────────────────────────────────────────────
+//  7. APP INITIALISATION
+// ──────────────────────────────────────────────────────────
 
-document.addEventListener('DOMContentLoaded', () => {
-  const canvas  = document.getElementById('starCanvas');
-  const map     = new StarMap(canvas);
+// ──────────────────────────────────────────────────────────────────────────
+//  6b. CATALOG DATA LOADING
+// ──────────────────────────────────────────────────────────────────────────
+
+const BSC5_BASE = 'https://raw.githubusercontent.com/brettonw/YaleBrightStarCatalog/abffb3b7223ae37e879b0a3ff5b49ad06aed5576/';
+
+const IAU_STAR_NAMES = {"15":"Alpheratz","21":"Caph","39":"Algenib","99":"Ankaa","130":"Cexing","153":"Fulu","168":"Schedar","188":"Diphda","215":"Shimu","219":"Achird","264":"Tiansi","265":"Castula","271":"Kui","285":"Tarandus","335":"Junnanmen","337":"Mirach","338":"Wurren","361":"Revati","362":"Revati","390":"Adhil","403":"Ruchbah","424":"Polaris","437":"Alpherg","458":"Titawin","464":"Nembus","472":"Achernar","496":"Dajiangjunbei","510":"Torcular","539":"Baten Kaitos","542":"Segin","544":"Mothallah","545":"Mesarthim","546":"Mesarthim","553":"Sheratan","580":"Gang","592":"Rangifer","595":"Alrescha","596":"Alrescha","603":"Almach","604":"Almach","617":"Hamal","622":"Alaybasan","642":"Triminus","660":"Deltoton","664":"Apdu","681":"Mira","707":"Huagai","804":"Kaffaljidhma","824":"Lilii Borea","834":"Miram","838":"Bharani","850":"Angetenar","874":"Azha","897":"Acamar","898":"Acamar","911":"Menkar","932":"Shangcheng","936":"Algol","941":"Misam","951":"Botein","963":"Dalim","984":"Zibal","1017":"Mirfak","1084":"Ran","1122":"Sarvvis","1131":"Atik","1136":"Rana","1140":"Celaeno","1142":"Electra","1145":"Taygeta","1148":"Shaowei","1149":"Maia","1151":"Asterope","1155":"Custos","1156":"Merope","1165":"Alcyone","1178":"Atlas","1180":"Pleione","1220":"Áldu","1228":"Menkib","1231":"Zaurak","1239":"Bibing","1298":"Beid","1325":"Keid","1336":"Rhombus","1346":"Prima Hyadum","1373":"Secunda Hyadum","1393":"Beemim","1407":"Shakata","1409":"Ain","1412":"Chamukuy","1457":"Aldebaran","1464":"Theemin","1481":"Sceptrum","1497":"Gaja","1543":"Tabit","1547":"Lembu","1577":"Hassaleh","1605":"Almaaz","1612":"Saclateni","1636":"Mago","1641":"Haedus","1654":"Ping","1666":"Cursa","1702":"Bade","1708":"Capella","1713":"Rigel","1790":"Bellatrix","1791":"Elnath","1829":"Nihal","1852":"Mintaka","1865":"Arneb","1879":"Meissa","1880":"Meissa","1899":"Hatysa","1903":"Alnilam","1910":"Tianguan","1948":"Alnitak","1949":"Alnitak","1956":"Phact","1998":"Darlugal","2004":"Saiph","2040":"Wazn","2061":"Betelgeuse","2077":"Bagu","2088":"Menkalinan","2095":"Mahasim","2177":"Elkurud","2209":"Shangwei","2216":"Propus","2261":"Hoerikwaggo","2282":"Furud","2286":"Tejat","2294":"Mirzam","2326":"Canopus","2363":"Kamelos","2421":"Alhena","2451":"Pipit","2473":"Mebsuta","2484":"Alzirr","2491":"Sirius","2527":"Tonglingxing","2618":"Adhara","2622":"Citalá","2646":"Nganurganity","2650":"Mekbuda","2657":"Muliphein","2693":"Wezen","2777":"Wasat","2827":"Aludra","2845":"Gomeisa","2890":"Castor","2891":"Castor","2930":"Jishui","2943":"Procyon","2990":"Pollux","3045":"Azmidi","3165":"Naos","3185":"Tureis","3208":"Tegmine","3209":"Tegmine","3210":"Tegmine","3249":"Tarf","3268":"Piautos","3275":"Alsciaukat","3307":"Avior","3323":"Muscida","3418":"Minchir","3449":"Asellus Borealis","3461":"Asellus Australis","3475":"Yuyu","3482":"Ashlesha","3485":"Alsephina","3522":"Copernicus","3569":"Talitha","3572":"Acubens","3594":"Alkaphrah","3627":"Nahn","3634":"Suhail","3685":"Miaplacidus","3699":"Aspidiske","3734":"Markeb","3743":"Intercrus","3748":"Alphard","3773":"Alterf","3845":"Ukdah","3852":"Subra","3903":"Zhang","3905":"Rasalas","3923":"Felis","3980":"Yunü","3982":"Regulus","4031":"Adhafera","4033":"Tania Borealis","4057":"Algieba","4058":"Algieba","4069":"Tania Australis","4133":"Shaomin","4247":"Praecipua","4277":"Chalawan","4287":"Alkes","4295":"Merak","4301":"Dubhe","4357":"Zosma","4359":"Chertan","4374":"Alula Australis","4375":"Alula Australis","4377":"Alula Borealis","4434":"Giausar","4459":"Formosa","4518":"Taiyangshou","4534":"Denebola","4540":"Zavijava","4554":"Phecda","4609":"Tonatiuh","4623":"Alchiba","4656":"Imai","4660":"Megrez","4662":"Gienah","4689":"Zaniah","4700":"Ginan","4729":"Acrux","4730":"Acrux","4731":"Acrux","4757":"Algorab","4763":"Gacrux","4785":"Chara","4786":"Kraz","4789":"Phyllon Kissinou","4823":"Lumbung","4825":"Porrima","4826":"Porrima","4846":"La Superba","4853":"Mimosa","4863":"Tianyi","4905":"Alioth","4910":"Minelauva","4914":"Cor Caroli","4915":"Cor Caroli","4916":"Taiyi","4932":"Vindemiatrix","4968":"Diadem","4969":"Diadem","5020":"Naga","5028":"Kulou","5054":"Mizar","5055":"Mizar","5056":"Spica","5062":"Alcor","5095":"Apamvatsa","5107":"Heze","5185":"Tepiamenit","5190":"Heng","5191":"Alkaid","5231":"Leepwal","5235":"Muphrid","5267":"Hadar","5288":"Menkent","5291":"Thuban","5315":"Kang","5338":"Syrma","5340":"Arcturus","5351":"Xuange","5359":"Khambalia","5409":"Elgafar","5429":"Kalasungsang","5435":"Seginus","5447":"Genghe","5459":"Toliman","5460":"Toliman","5463":"Xami","5469":"Uridim","5470":"Paradys","5490":"Alrumh","5505":"Pulcherrima","5506":"Izar","5511":"Maenalus","5526":"Solitaire","5531":"Zubenelgenubi","5533":"Merga","5563":"Kochab","5602":"Nekkar","5603":"Brachium","5618":"Quadrans","5681":"Qigong","5685":"Zubeneschamali","5714":"Pherkad Minor","5733":"Alkalurops","5734":"Alkalurops","5735":"Pherkad","5744":"Edasich","5747":"Nusakan","5778":"Guansuo","5787":"Zubenelhakrabi","5793":"Alphecca","5849":"Baltesha","5854":"Unukalhai","5855":"Stephanos","5867":"Zhou","5879":"Gudja","5889":"Matrichakra","5928":"Iklil","5944":"Fang","5953":"Dschubba","5958":"Blaze Star","5971":"Aurwandilsta","5984":"Acrab","5985":"Acrab","6008":"Marsic","6009":"Marsic","6026":"Jabbah","6027":"Jabbah","6056":"Yed Prior","6075":"Yed Posterior","6084":"Alniyat","6092":"Asuusiha","6115":"Yaqana","6117":"Cujam","6132":"Athebyne","6134":"Antares","6148":"Kornephoros","6149":"Marfik","6165":"Paikauhale","6212":"Tianji","6217":"Atria","6241":"Larawag","6247":"Xamidimura","6252":"Pipirima","6298":"Shengong","6324":"Khepdenreret","6369":"Alrakis","6370":"Alrakis","6378":"Sabik","6396":"Aldhibah","6401":"Guniibuu","6402":"Guniibuu","6406":"Rasalgethi","6407":"Rasalgethi","6410":"Sarin","6418":"Nüchuang","6508":"Lesath","6526":"Maasym","6527":"Shaula","6536":"Rastaban","6553":"Sargas","6556":"Rasalhague","6585":"Cervantes","6588":"Tianbang","6603":"Cebalrai","6629":"Bake-eo","6630":"Fuyue","6636":"Dziban","6637":"Dziban","6688":"Grumium","6705":"Eltanin","6729":"Bodu","6730":"Bodu","6746":"Alnasl","6787":"Ramus","6789":"Yildun","6812":"Polis","6859":"Kaus Media","6879":"Kaus Australis","6895":"Tusizuo","6913":"Kaus Borealis","6945":"Fafnir","6973":"Tianbian","7001":"Vega","7043":"Xihe","7051":"Pongaponga","7052":"Pongaponga","7056":"Kautoki","7057":"Urquchillay","7106":"Sheliak","7116":"Ainalrami","7121":"Nunki","7139":"Jiantai","7141":"Alya","7142":"Alya","7157":"Niandao","7176":"Arin-majlep","7178":"Sulafat","7194":"Ascella","7228":"Polaris Australis","7235":"Okab","7254":"Meridiana","7264":"Albaldah","7291":"Gumala","7298":"Aladfar","7310":"Altais","7314":"Ninnisig","7337":"Arkab Prior","7343":"Arkab Posterior","7348":"Rukbat","7377":"Guqi","7405":"Anser","7417":"Albireo","7418":"Albireo","7462":"Alsafi","7474":"Hru","7479":"Sham","7488":"Shakh","7525":"Tarazed","7528":"Fawaris","7536":"Zuoqi","7557":"Altair","7570":"Pagru","7595":"Libertas","7597":"Terebellum","7602":"Alshain","7635":"Telum","7669":"Tianfu","7710":"Antinous","7754":"Algedi","7773":"Alshat","7776":"Dabih","7790":"Peacock","7796":"Sadr","7852":"Aldulfin","7882":"Rotanev","7906":"Sualocin","7924":"Deneb","7949":"Aljanah","7950":"Albali","8030":"Musica","8075":"Udang","8131":"Kitalpha","8162":"Alderamin","8232":"Sadalsuud","8238":"Alfirk","8264":"Bunda","8278":"Nashira","8301":"Azelfafage","8308":"Enif","8316":"Garnet Star","8322":"Deneb Algedi","8353":"Aldhanab","8414":"Sadalmelik","8417":"Kurhah","8425":"Alnair","8450":"Biham","8499":"Ancha","8502":"Lang-exster","8518":"Sadachbia","8585":"Stellio","8610":"Situla","8634":"Homam","8636":"Tiaki","8650":"Matar","8684":"Sadalbari","8698":"Shatabhisha","8709":"Skat","8726":"Tengshe","8728":"Fomalhaut","8729":"Helvetios","8762":"Alfarasalkamil","8773":"Fumalsamakah","8775":"Scheat","8781":"Markab","8812":"Safina","8830":"Honores","8880":"Salm","8905":"Alkarab","8930":"Veritate","8961":"Udkadua","8965":"Rasalnaqa","8974":"Errai","8976":"Kaffalmusalsala","9098":"Hydor"};
+
+const CONSTELLATION_NAMES = {"And":"Andromeda","Ant":"Antlia","Aps":"Apus","Aqr":"Aquarius","Aql":"Aquila","Ara":"Ara","Ari":"Aries","Aur":"Auriga","Boo":"Boötes","Cae":"Caelum","Cam":"Camelopardus","Cap":"Capricornus","Car":"Carina","Cas":"Cassiopeia","Cen":"Centaurus","Cep":"Cepheus","Cet":"Cetus","Cha":"Chamaeleon","Cir":"Circinus","CMa":"Canis Major","CMi":"Canis Minor","Cnc":"Cancer","Col":"Columba","Com":"Coma Berenices","CrA":"Corona Australis","CrB":"Corona Borealis","Crt":"Crater","Cru":"Crux","Crv":"Corvus","CVn":"Canes Venatici","Cyg":"Cygnus","Del":"Delphinus","Dor":"Dorado","Dra":"Draco","Equ":"Equuleus","Eri":"Eridanus","For":"Fornax","Gem":"Gemini","Gru":"Grus","Her":"Hercules","Hor":"Horologium","Hya":"Hydra","Hyi":"Hydrus","Ind":"Indus","Lac":"Lacerta","Leo":"Leo","Lep":"Lepus","Lib":"Libra","LMi":"Leo Minor","Lup":"Lupus","Lyn":"Lynx","Lyr":"Lyra","Men":"Mensa","Mic":"Microscopium","Mon":"Monoceros","Mus":"Musca","Nor":"Norma","Oct":"Octans","Oph":"Ophiuchus","Ori":"Orion","Pav":"Pavo","Peg":"Pegasus","Per":"Perseus","Phe":"Phoenix","Pic":"Pictor","PsA":"Piscis Austrinus","Psc":"Pices","Pup":"Puppis","Pyx":"Pyxis","Ret":"Reticulum","Sco":"Scorpius","Scl":"Sculptor","Sct":"Scutum","Ser":"Serpens*","Sex":"Sextans","Sge":"Sagitta","Sgr":"Sagittarius","Tau":"Taurus","Tel":"Telescopium","TrA":"Triangulum Australe","Tri":"Triangulum","Tuc":"Tucana","UMa":"Ursa Major","UMi":"Ursa Minor","Vel":"Vela","Vir":"Virgo","Vol":"Volans","Vul":"Vulpecula"};
+
+function hmsToDeg(s) {
+  const m = s.match(/(\d+)h\s*(\d+)m\s*([\d.]+)s/);
+  if (!m) return null;
+  return (parseFloat(m[1]) + parseFloat(m[2]) / 60 + parseFloat(m[3]) / 3600) * 15;
+}
+
+function dmsToDeg(s) {
+  const m = s.match(/([+-]?)(\d+)[\u00b0\u2032\s]+(\d+)[\u2032\u2033\s]+([\d.]+)[\u2033]?/);
+  if (!m) return null;
+  return (m[1] === '-' ? -1 : 1) * (parseFloat(m[2]) + parseFloat(m[3]) / 60 + parseFloat(m[4]) / 3600);
+}
+
+async function loadCatalogData() {
+  const [bsc, bscShort] = await Promise.all([
+    fetch(BSC5_BASE + 'bsc5.json').then(r => {
+      if (!r.ok) throw new Error('bsc5.json HTTP ' + r.status);
+      return r.json();
+    }),
+    fetch(BSC5_BASE + 'bsc5-short.json').then(r => {
+      if (!r.ok) throw new Error('bsc5-short.json HTTP ' + r.status);
+      return r.json();
+    })
+  ]);
+
+  const hrConst = {};
+  bscShort.forEach(s => {
+    if (s.HR && s.C) hrConst[parseInt(s.HR, 10)] = s.C;
+  });
+
+  const catalog = [];
+  bsc.forEach(s => {
+    const ra = hmsToDeg(s.RA || '');
+    const dec = dmsToDeg(s.Dec || '');
+    const mag = parseFloat(s.Vmag);
+    if (ra === null || dec === null || isNaN(mag) || mag > 6.5) return;
+    const bv = parseFloat(s['B-V']);
+    const hr = parseInt(s.HR, 10) || 0;
+    catalog.push([
+      Math.round(ra * 1000) / 1000,
+      Math.round(dec * 1000) / 1000,
+      mag,
+      isNaN(bv) ? 0.6 : bv,
+      parseFloat(s.pmRA) || 0,
+      parseFloat(s.pmDE) || 0,
+      hr,
+      (s.SpectralCls || '').trim(),
+      hrConst[hr] || ''
+    ]);
+  });
+  return catalog;
+}
+
+async function init() {
+  let catalog;
+  try {
+    catalog = await loadCatalogData();
+  } catch (err) {
+    const readout = document.getElementById('yearReadout');
+    if (readout) readout.textContent = 'Star catalog failed to load — check your connection and refresh.';
+    return;
+  }
+  buildCatalog(catalog, IAU_STAR_NAMES, CONSTELLATION_NAMES);
+
+  const mapNorth = new HemisphereMap(document.getElementById('starCanvasNorth'), 'north');
+  const mapSouth = new HemisphereMap(document.getElementById('starCanvasSouth'), 'south');
+  const maps = [mapNorth, mapSouth];
 
   let currentYear = 2026;
 
-  // --- Update all UI from year ---
   function setYear(year) {
     currentYear = clampYear(year);
 
-    // Update map
-    map.setYear(currentYear);
+    maps.forEach(m => m.setYear(currentYear));
 
-    // Update year readout
     document.getElementById('yearReadout').textContent = formatYear(currentYear);
+    document.getElementById('epochLabelNorth').textContent = `Epoch: ${formatYear(currentYear)}`;
+    document.getElementById('epochLabelSouth').textContent = `Epoch: ${formatYear(currentYear)}`;
 
-    // Update epoch label on canvas
-    document.getElementById('epochLabel').textContent = `Epoch: ${formatYear(currentYear)}`;
-
-    // Sync slider
     document.getElementById('timelineSlider').value = currentYear;
-
-    // Sync text input
     document.getElementById('yearInput').value = currentYear;
 
-    // Update pole star info
-    const info = getPoleStarInfo(currentYear);
-    document.getElementById('poleStarName').textContent   = info.name;
-    document.getElementById('poleStarDetail').textContent = info.detail;
+    const infoN = getPoleStarInfo(currentYear, 'north');
+    document.getElementById('poleStarNameNorth').textContent   = infoN.name;
+    document.getElementById('poleStarDetailNorth').textContent = infoN.detail;
 
-    // Highlight active preset (if any)
+    const infoS = getPoleStarInfo(currentYear, 'south');
+    document.getElementById('poleStarNameSouth').textContent   = infoS.name;
+    document.getElementById('poleStarDetailSouth').textContent = infoS.detail;
+
     document.querySelectorAll('.preset-btn').forEach(btn => {
       const y = parseInt(btn.dataset.year, 10);
       btn.classList.toggle('active', y === currentYear);
     });
   }
 
-  // --- Slider ---
   const slider = document.getElementById('timelineSlider');
   slider.addEventListener('input', () => {
     setYear(parseInt(slider.value, 10));
   });
 
-  // --- Manual input + Go button ---
   const yearInput = document.getElementById('yearInput');
   const goBtn     = document.getElementById('yearGoBtn');
 
@@ -917,19 +1101,18 @@ document.addEventListener('DOMContentLoaded', () => {
     if (e.key === 'Enter') applyManualInput();
   });
 
-  // --- Preset buttons ---
   document.querySelectorAll('.preset-btn').forEach(btn => {
     btn.addEventListener('click', () => {
       setYear(parseInt(btn.dataset.year, 10));
     });
   });
 
-  // --- Star click → modal ---
-  map.onStarClick = (star) => {
-    openStarCard(star, currentYear);
-  };
+  maps.forEach(m => {
+    m.onStarClick = (star) => {
+      openStarCard(star, currentYear);
+    };
+  });
 
-  // --- Modal close ---
   document.getElementById('cardCloseBtn').addEventListener('click', closeStarCard);
   document.getElementById('modalBackdrop').addEventListener('click', e => {
     if (e.target === e.currentTarget) closeStarCard();
@@ -938,6 +1121,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (e.key === 'Escape') closeStarCard();
   });
 
-  // --- Initial render ---
   setYear(2026);
-});
+}
+
+document.addEventListener('DOMContentLoaded', init);

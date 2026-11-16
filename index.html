@@ -19,7 +19,7 @@
         <h1 class="site-title">Celestial Atlas</h1>
         <span class="header-ornament">✦</span>
       </div>
-      <p class="site-subtitle">A Precessional Star Map · 10,000 BCE to 2026 CE</p>
+      <p class="site-subtitle">A Precessional Star Map · 50,000 BCE to 50,000 CE</p>
     </div>
   </header>
 
@@ -42,14 +42,14 @@
             type="range"
             id="timelineSlider"
             class="timeline-slider"
-            min="-10000"
-            max="2026"
+            min="-50000"
+            max="50000"
             value="2026"
             step="1"
           />
           <div class="slider-labels">
-            <span>10,000 BCE</span>
-            <span>Present</span>
+            <span>50,000 BCE</span>
+            <span>50,000 CE</span>
           </div>
         </div>
 
@@ -60,8 +60,8 @@
               type="number"
               id="yearInput"
               class="year-input"
-              min="-10000"
-              max="2026"
+              min="-50000"
+              max="50000"
               value="2026"
               placeholder="e.g. -2500"
             />
@@ -74,20 +74,30 @@
           <p class="presets-label">Notable Epochs</p>
           <div class="presets-grid">
             <button class="preset-btn" data-year="2026">2026 CE<br/><small>Polaris era</small></button>
-            <button class="preset-btn" data-year="1000">1000 CE<br/><small>Medieval sky</small></button>
             <button class="preset-btn" data-year="-2500">2500 BCE<br/><small>Thuban pole</small></button>
-            <button class="preset-btn" data-year="-4000">4000 BCE<br/><small>Early Egypt</small></button>
-            <button class="preset-btn" data-year="-6000">6000 BCE<br/><small>Neolithic</small></button>
-            <button class="preset-btn" data-year="-10000">10000 BCE<br/><small>Ice Age end</small></button>
+            <button class="preset-btn" data-year="-12000">12000 BCE<br/><small>Ice Age end</small></button>
+            <button class="preset-btn" data-year="-20000">20000 BCE<br/><small>Last Glacial Maximum</small></button>
+            <button class="preset-btn" data-year="-50000">50000 BCE<br/><small>Deep past</small></button>
+            <button class="preset-btn" data-year="4000">4000 CE<br/><small>Errai pole</small></button>
+            <button class="preset-btn" data-year="13727">13727 CE<br/><small>Vega era</small></button>
+            <button class="preset-btn" data-year="50000">50000 CE<br/><small>Deep future</small></button>
           </div>
         </div>
       </div>
 
       <div class="panel-section">
-        <h2 class="panel-heading">Pole Star Now</h2>
-        <div class="pole-info" id="poleInfo">
-          <div class="pole-star-name" id="poleStarName">Polaris</div>
-          <div class="pole-star-detail" id="poleStarDetail">α Ursae Minoris · ~0.7° from pole</div>
+        <h2 class="panel-heading">Pole Stars Now</h2>
+        <div class="pole-grid">
+          <div class="pole-info">
+            <span class="pole-hemi-label">North</span>
+            <div class="pole-star-name" id="poleStarNameNorth">Polaris</div>
+            <div class="pole-star-detail" id="poleStarDetailNorth">α Ursae Minoris · ~0.7° from pole</div>
+          </div>
+          <div class="pole-info">
+            <span class="pole-hemi-label">South</span>
+            <div class="pole-star-name" id="poleStarNameSouth">Polaris Australis</div>
+            <div class="pole-star-detail" id="poleStarDetailSouth">σ Octantis · ~1° from pole</div>
+          </div>
         </div>
       </div>
 
@@ -96,19 +106,19 @@
         <div class="legend-items">
           <div class="legend-item">
             <span class="legend-dot legend-bright"></span>
-            <span>Named star — click to inspect</span>
+            <span>Catalog star — click to inspect</span>
           </div>
           <div class="legend-item">
             <span class="legend-dot legend-dim"></span>
-            <span>Background star field</span>
+            <span>Naked-eye star (mag ≤ 6.5)</span>
           </div>
           <div class="legend-item">
             <span class="legend-dot legend-pole"></span>
-            <span>Celestial North Pole</span>
+            <span>Celestial pole (map centre)</span>
           </div>
           <div class="legend-item">
             <span class="legend-line"></span>
-            <span>Precession circle path</span>
+            <span>Precessional path of the pole</span>
           </div>
         </div>
       </div>
@@ -116,20 +126,26 @@
       <div class="panel-section">
         <h2 class="panel-heading">About Precession</h2>
         <p class="panel-description small-text">
-          Earth's axis wobbles like a spinning top, completing one full cycle every ~25,772 years — the Platonic Year. This shifts which star sits nearest the celestial pole. Thuban (α Draconis) was the pole star around 2750 BCE; Polaris holds the title today; Vega will take the crown near 14,000 CE.
+          Earth's axis wobbles like a spinning top, completing one full cycle every ~25,772 years — the Platonic Year — while the 23.4° axial tilt itself breathes between 22.1° and 24.5° over a 41,000-year cycle. Together they decide which star sits nearest each celestial pole. Thuban ruled the north around 2750 BCE; Polaris holds it today; Errai takes over near 4000 CE. Over this 100,000-year atlas the pole sweeps the whole map.
         </p>
       </div>
     </aside>
 
     <!-- Center: Star Map Canvas -->
     <section class="map-section">
-      <div class="canvas-container" id="canvasContainer">
-        <canvas id="starCanvas"></canvas>
-        <div class="canvas-overlay-label top-left">NORTH CELESTIAL POLE</div>
-        <div class="canvas-overlay-label bottom-right" id="epochLabel">Epoch: 2026 CE</div>
-        <div class="crosshair" id="crosshair"></div>
+      <div class="hemisphere-grid">
+        <div class="canvas-container">
+          <canvas id="starCanvasNorth"></canvas>
+          <div class="canvas-overlay-label top-left">NORTH CELESTIAL HEMISPHERE</div>
+          <div class="canvas-overlay-label bottom-right" id="epochLabelNorth">Epoch: 2026 CE</div>
+        </div>
+        <div class="canvas-container">
+          <canvas id="starCanvasSouth"></canvas>
+          <div class="canvas-overlay-label top-left">SOUTH CELESTIAL HEMISPHERE</div>
+          <div class="canvas-overlay-label bottom-right" id="epochLabelSouth">Epoch: 2026 CE</div>
+        </div>
       </div>
-      <p class="map-hint">Click any named star to view its data card · The circle traces the precessional path of the pole</p>
+      <p class="map-hint">Click any star for its data card · dashed circle traces the pole's precessional path · south view is mirrored, as on a planisphere</p>
     </section>
 
   </main>
