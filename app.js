@@ -925,7 +925,7 @@ function openStarCard(star, year) {
   set('cardLore', star.lore ||
     (star.name
       ? 'An IAU-named star of the naked-eye sky. Its cultural stories vary across civilizations — and its position on these maps shifts with the slow wobble of Earth\'s axis.'
-      : 'A naked-eye star from the Yale Bright Star Catalog. Every star you can see from a dark site on Earth is plotted on these hemispheres.'));
+      : 'A bright star from the Yale Bright Star Catalog — one of the brightest stars in the night sky, plotted on these hemispheres.'));
 
   const glyph = document.getElementById('cardGlyph');
   const color = star.fillColor || bvToColor(star.bv || 0.6);
@@ -1020,7 +1020,7 @@ async function loadCatalogData() {
     const ra = hmsToDeg(s.RA || '');
     const dec = dmsToDeg(s.Dec || '');
     const mag = parseFloat(s.Vmag);
-    if (ra === null || dec === null || isNaN(mag) || mag > 6.5) return;
+    if (ra === null || dec === null || isNaN(mag) || mag > 4.0) return;
     const bv = parseFloat(s['B-V']);
     const hr = parseInt(s.HR, 10) || 0;
     catalog.push([
